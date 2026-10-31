@@ -171,6 +171,11 @@ public class ClickGuiScreen extends class_437 implements MinecraftAccess {
 
          this.field1089 = var2;
          if (field0796.field_1755 == null) {
+            // Respect Design setting: only open dropdown style when selected
+            ClickGUI clickGui = ClickGUI.method1683();
+            if (clickGui != null && clickGui.getDesign() == ClickGUI.Design.DAAMKY) {
+               return; // DaamkyClickGuiScreen handles opening
+            }
             field0796.method_1507(this);
             this.field1574 = false;
             this.field1706 = -1L;
