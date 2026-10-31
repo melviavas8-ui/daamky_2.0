@@ -1,0 +1,24 @@
+{
+  "blend": {
+    "func": "add",
+    "srcrgb": "srcalpha",
+    "dstrgb": "1-srcalpha"
+  },
+  "vertex": "minecraft:post/sobel",
+  "fragment": "daamky:program/itemchams_solid",
+  "attributes": [ "Position" ],
+  "samplers": [{ "name": "DiffuseSampler" }],
+  "uniforms": [
+    { "name": "ProjMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+    { "name": "InSize", "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+    { "name": "OutSize", "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+    { "name": "shapeMode", "type": "int", "count": 1, "values": [ 0 ] },
+    { "name": "fillOpacity", "type": "float", "count": 1, "values": [ 1.0 ] },
+    { "name": "glintEnabled", "type": "int", "count": 1, "values": [ 0 ] },
+    { "name": "glintSpeed", "type": "float", "count": 1, "values": [ 1.0 ] },
+    { "name": "glintScale", "type": "float", "count": 1, "values": [ 10.0 ] },
+    { "name": "glintStrength", "type": "float", "count": 1, "values": [ 0.01 ] },
+    { "name": "glintCount", "type": "int", "count": 1, "values": [ 3 ] },
+    { "name": "Time", "type": "float", "count": 1, "values": [ 0.0 ] }
+  ]
+}

@@ -1,0 +1,23 @@
+accessWidener	v2	named
+accessible	class	net/minecraft/class_758$class_7286
+accessible	class	net/minecraft/class_4618$class_4586
+accessible	class	net/minecraft/class_759$class_5773
+accessible	class	net/minecraft/class_9147$class_9148
+accessible	method	net/minecraft/class_746	method_46742	()V
+accessible	method	net/minecraft/class_1297	method_18795	(Lnet/minecraft/class_243;FF)Lnet/minecraft/class_243;
+accessible	method	net/minecraft/class_1309	method_29920	()Z
+accessible	field	net/minecraft/class_746	field_3919	Z
+accessible	field	net/minecraft/class_746	field_3941	F
+accessible	field	net/minecraft/class_746	field_3925	F
+accessible	field	net/minecraft/class_1297	field_5964	Lit/unimi/dsi/fastutil/objects/Object2DoubleMap;
+accessible	field	net/minecraft/class_1297	field_25599	Ljava/util/Set;
+accessible	field	net/minecraft/class_1297	field_18065	Lnet/minecraft/class_4048;
+accessible	field	net/minecraft/class_1297	field_6014	D
+accessible	field	net/minecraft/class_1297	field_5969	D
+accessible	field	net/minecraft/class_1309	field_6282	Z
+accessible	field	net/minecraft/class_1309	field_6228	I
+mutable	field	net/minecraft/class_2886	field_51930	F
+mutable	field	net/minecraft/class_2886	field_51931	F
+accessible	field	net/minecraft/class_2886	field_51930	F
+accessible	field	net/minecraft/class_2886	field_51931	F
+accessible	field	net/minecraft/class_2824	field_12870	I

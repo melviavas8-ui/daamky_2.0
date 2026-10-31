@@ -1,0 +1,28 @@
+{
+  "blend": {
+    "func": "add",
+    "srcrgb": "srcalpha",
+    "dstrgb": "1-srcalpha"
+  },
+  "vertex": "minecraft:post/sobel",
+  "fragment": "daamky:program/lightpillar",
+  "attributes": [ "Position" ],
+  "samplers": [{ "name": "DiffuseSampler" }],
+  "uniforms": [
+    { "name": "ProjMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+    { "name": "InSize", "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+    { "name": "OutSize", "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+    { "name": "Time", "type": "float", "count": 1, "values": [ 0.0 ] },
+    { "name": "TopColor", "type": "float", "count": 3, "values": [ 0.322, 0.153, 1.0 ] },
+    { "name": "BottomColor", "type": "float", "count": 3, "values": [ 1.0, 0.624, 0.988 ] },
+    { "name": "Intensity", "type": "float", "count": 1, "values": [ 1.0 ] },
+    { "name": "GlowAmount", "type": "float", "count": 1, "values": [ 0.005 ] },
+    { "name": "PillarWidth", "type": "float", "count": 1, "values": [ 3.0 ] },
+    { "name": "PillarHeight", "type": "float", "count": 1, "values": [ 0.4 ] },
+    { "name": "NoiseIntensity", "type": "float", "count": 1, "values": [ 0.5 ] },
+    { "name": "RotationSpeed", "type": "float", "count": 1, "values": [ 0.3 ] },
+    { "name": "Opacity", "type": "float", "count": 1, "values": [ 1.0 ] },
+    { "name": "PillarRotation", "type": "float", "count": 1, "values": [ 0.0 ] },
+    { "name": "PillarOffset", "type": "float", "count": 2, "values": [ 0.0, 0.0 ] }
+  ]
+}

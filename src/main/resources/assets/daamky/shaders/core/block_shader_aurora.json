@@ -1,0 +1,15 @@
+{
+  "vertex": "daamky:core/burning_hands",
+  "fragment": "daamky:core/block_shader_aurora",
+  "samplers": [
+    { "name": "SceneTexture" },
+    { "name": "MaskTexture" }
+  ],
+  "uniforms": [
+    { "name": "InSize",     "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+    { "name": "Time",       "type": "float", "count": 1, "values": [ 0.0 ] },
+    { "name": "Intensity",  "type": "float", "count": 1, "values": [ 1.0 ] },
+    { "name": "TintColor",  "type": "float", "count": 3, "values": [ 0.33, 0.06, 0.70 ] },
+    { "name": "BlockCenter","type": "float", "count": 2, "values": [ 0.5, 0.5 ] }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "vertex": "daamky:core/burning_hands",
+  "fragment": "daamky:core/burning_hands_glow",
+  "samplers": [
+    { "name": "HandTexture" }
+  ],
+  "uniforms": [
+    { "name": "TexelSize",  "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+    { "name": "Radius",     "type": "float", "count": 1, "values": [ 15.0 ] },
+    { "name": "Strength",   "type": "float", "count": 1, "values": [ 1.18 ] },
+    { "name": "FlameSpeed", "type": "float", "count": 1, "values": [ 1.1 ] },
+    { "name": "Time",       "type": "float", "count": 1, "values": [ 0.0 ] },
+    { "name": "FireColor",  "type": "float", "count": 3, "values": [ 1.0, 0.5, 0.15 ] },
+    { "name": "ColorMix",   "type": "float", "count": 1, "values": [ 0.0 ] }
+  ]
+}

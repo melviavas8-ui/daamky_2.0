@@ -1,0 +1,14 @@
+{
+  "vertex": "daamky:core/burning_hands",
+  "fragment": "daamky:core/burning_hands_mask",
+  "samplers": [
+    { "name": "BeforeColor" },
+    { "name": "AfterColor" },
+    { "name": "BeforeDepth" },
+    { "name": "AfterDepth" }
+  ],
+  "uniforms": [
+    { "name": "TexelSize", "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+    { "name": "GlowSides", "type": "float", "count": 2, "values": [ 0.0, 0.0 ] }
+  ]
+}

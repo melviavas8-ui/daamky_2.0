@@ -1,0 +1,107 @@
+plugins {
+    id 'fabric-loom' version "${loom_version}"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'Meteor Maven'
+        url = 'https://maven.meteordev.org/releases'
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    // Identity "named" layer: keeps the intermediary names used by the recovered source.
+    mappings files('mappings/intermediary-named-1.21.4.jar')
+
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    modImplementation "io.github.llamalad7:mixinextras-fabric:${project.mixinextras_version}"
+
+    implementation 'meteordevelopment:orbit:0.2.3'
+    implementation 'net.java.dev.jna:jna-platform:5.14.0'
+    implementation 'ai.catboost:catboost-common:1.2.7'
+    implementation 'ai.catboost:catboost-prediction:1.2.7'
+    implementation 'dev.redstones.mediaplayerinfo:media-player-info:0.1.0'
+    implementation 'com.googlecode.soundlibs:jlayer:1.0.1.4'
+    implementation 'io.netty:netty-handler-proxy:4.1.118.Final'
+    implementation files('libs/recovered-bytecode.jar')
+
+    include('meteordevelopment:orbit:0.2.3') { transitive = false }
+    include('ai.catboost:catboost-common:1.2.7') { transitive = false }
+    include('ai.catboost:catboost-prediction:1.2.7') { transitive = false }
+    include('dev.redstones.mediaplayerinfo:media-player-info:0.1.0') { transitive = false }
+    include('com.googlecode.soundlibs:jlayer:1.0.1.4') { transitive = false }
+    include('io.netty:netty-handler-proxy:4.1.118.Final') { transitive = false }
+    include('io.netty:netty-codec-socks:4.1.118.Final') { transitive = false }
+
+    modImplementation files('libs/baritone-standalone-fabric-1.13.1.jar')
+    modRuntimeOnly files('libs/nether-pathfinder-1.4.1.jar')
+
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+    compileOnly 'org.jetbrains:annotations:26.0.2'
+}
+
+// The decompiled tree is retained for recovery work. Only the safety overrides
+// are recompiled; the remaining recovered classes come from the renamed bytecode.
+sourceSets {
+    main {
+        java {
+            include 'aethereal/core/DaamkyClient.java'
+            include 'aethereal/core/ClientContext.java'
+            include 'aethereal/core/Session.java'
+            include 'aethereal/core/ModuleManager.java'
+            include 'aethereal/services/ConfigManager.java'
+            include 'aethereal/services/OfflineWeatherService.java'
+            include 'aethereal/services/ProxyGeoService.java'
+            include 'aethereal/services/RemoteAvatarService.java'
+            include 'aethereal/services/SystemMetrics.java'
+            include 'ua/patch/daamky/api/mixins/MinecraftClientMixin.java'
+        }
+    }
+}
+
+tasks.named('jar', Jar) {
+    from(zipTree('libs/recovered-bytecode.jar')) {
+        include '**/*.class'
+        exclude 'aethereal/*Rich*Presence.class'
+        exclude 'aethereal/ModuleManager.class'
+        exclude 'aethereal/ConfigManager.class'
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+loom {
+    accessWidenerPath = file('src/main/resources/daamky.accesswidener')
+    mixin {
+        // The original, already-remapped refmap is bundled in resources.
+        useLegacyMixinAp = false
+    }
+}
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') {
+        expand version: project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+    withSourcesJar()
+}

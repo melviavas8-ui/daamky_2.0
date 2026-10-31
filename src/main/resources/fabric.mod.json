@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "daamky",
+  "version": "${version}",
+  "name": "Daamky 2.0",
+  "description": "Daamky client for Minecraft 1.21.4",
+  "authors": [
+    "skidname"
+  ],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "environment": "client",
+  "accessWidener": "daamky.accesswidener",
+  "entrypoints": {
+    "main": [
+      "ua.patch.daamky.api.Proxy"
+    ]
+  },
+  "mixins": [
+    "daamky.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "fabric": "*",
+    "minecraft": "1.21.4",
+    "mixinextras": ">=0.4.0"
+  }
+}

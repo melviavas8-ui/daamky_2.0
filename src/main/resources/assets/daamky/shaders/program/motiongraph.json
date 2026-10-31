@@ -1,0 +1,32 @@
+{
+  "blend": {
+    "func": "add",
+    "srcrgb": "srcalpha",
+    "dstrgb": "1-srcalpha"
+  },
+  "vertex": "minecraft:post/sobel",
+  "fragment": "daamky:program/motiongraph",
+  "attributes": [ "Position" ],
+  "samplers": [
+    { "name": "DiffuseSampler" },
+    { "name": "GraphBuffer" }
+  ],
+  "uniforms": [
+    { "name": "ProjMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+    { "name": "InSize", "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+    { "name": "OutSize", "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+    { "name": "PosX", "type": "float", "count": 1, "values": [ 0.5 ] },
+    { "name": "PosY", "type": "float", "count": 1, "values": [ 0.8 ] },
+    { "name": "GraphWidth", "type": "float", "count": 1, "values": [ 0.3 ] },
+    { "name": "GraphHeight", "type": "float", "count": 1, "values": [ 0.15 ] },
+    { "name": "Speed", "type": "float", "count": 1, "values": [ 48.0 ] },
+    { "name": "Points", "type": "float", "count": 1, "values": [ 32.0 ] },
+    { "name": "Intensity", "type": "float", "count": 1, "values": [ 4096.0 ] },
+    { "name": "FadeR", "type": "float", "count": 1, "values": [ 0.98 ] },
+    { "name": "FadeG", "type": "float", "count": 1, "values": [ 0.995 ] },
+    { "name": "FadeB", "type": "float", "count": 1, "values": [ 0.99 ] },
+    { "name": "Motion", "type": "float", "count": 1, "values": [ 0.0 ] },
+    { "name": "Time", "type": "float", "count": 1, "values": [ 0.0 ] }
+  ]
+}
+

@@ -1,0 +1,18 @@
+{
+  "vertex": "daamky:core/burning_hands",
+  "fragment": "daamky:core/burning_hands_trail",
+  "samplers": [
+    { "name": "TrailTexture" },
+    { "name": "GlowTexture" },
+    { "name": "HandTexture" }
+  ],
+  "uniforms": [
+    { "name": "TexelSize",   "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+    { "name": "Decay",       "type": "float", "count": 1, "values": [ 0.94 ] },
+    { "name": "FlameHeight", "type": "float", "count": 1, "values": [ 28.0 ] },
+    { "name": "FlowSpeed",   "type": "float", "count": 1, "values": [ 1.1 ] },
+    { "name": "Time",        "type": "float", "count": 1, "values": [ 0.0 ] },
+    { "name": "FireColor",   "type": "float", "count": 3, "values": [ 1.0, 0.5, 0.15 ] },
+    { "name": "ColorMix",    "type": "float", "count": 1, "values": [ 0.0 ] }
+  ]
+}

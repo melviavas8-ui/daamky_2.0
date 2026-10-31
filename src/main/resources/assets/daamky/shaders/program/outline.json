@@ -1,0 +1,40 @@
+{
+  "blend": {
+    "func": "add",
+    "srcrgb": "srcalpha",
+    "dstrgb": "1-srcalpha"
+  },
+  "vertex": "minecraft:post/sobel",
+  "fragment": "daamky:program/outline",
+  "attributes": [ "Position" ],
+  "samplers": [{ "name": "DiffuseSampler" }],
+  "uniforms": [
+    { "name": "ProjMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+    { "name": "InSize", "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+    { "name": "OutSize", "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+    { "name": "RenderMode", "type": "int",  "count": 1, "values": [ 1.0 ] },
+    { "name": "MainColor", "type": "float",  "count": 4, "values": [ 1.0, 1.0, 1.0, 1.0 ] },
+    { "name": "GlintEnabled", "type": "float",  "count": 1, "values": [ 0.0 ] },
+    { "name": "GlintSpeed", "type": "float",  "count": 1, "values": [ 0.58 ] },
+    { "name": "GlintWidth", "type": "float",  "count": 1, "values": [ 0.58 ] },
+    { "name": "GlintGrad", "type": "float",  "count": 1, "values": [ 3.0 ] },
+    { "name": "GlintColor", "type": "float",  "count": 4, "values": [ 1.0, 1.0, 1.0, 1.0 ] },
+    { "name": "NoiseEnabled", "type": "float",  "count": 1, "values": [ 0.0 ] },
+    { "name": "NoiseSpeed", "type": "float",  "count": 1, "values": [ 1.0 ] },
+    { "name": "NoiseAngle", "type": "float",  "count": 1, "values": [ 10.0 ] },
+    { "name": "NoiseScale", "type": "float",  "count": 1, "values": [ 5.0 ] },
+    { "name": "NoiseColor", "type": "float",  "count": 4, "values": [ 1.0, 1.0, 1.0, 1.0 ] },
+    { "name": "CircuitEnabled", "type": "float",  "count": 1, "values": [ 0.0 ] },
+    { "name": "CircuitSpeed", "type": "float",  "count": 1, "values": [ 0.2 ] },
+    { "name": "CircuitIntensity", "type": "float",  "count": 1, "values": [ 1.0 ] },
+    { "name": "CircuitColor", "type": "float",  "count": 4, "values": [ 0.0, 0.588, 1.0, 1.0 ] },
+    { "name": "LiquidGlassEnabled", "type": "float",  "count": 1, "values": [ 0.0 ] },
+    { "name": "LiquidGlassWidth", "type": "float",  "count": 1, "values": [ 0.33 ] },
+    { "name": "LiquidGlassHeight", "type": "float",  "count": 1, "values": [ 0.33 ] },
+    { "name": "LiquidGlassRadius", "type": "float",  "count": 1, "values": [ 0.1 ] },
+    { "name": "LiquidGlassRefraction", "type": "float",  "count": 1, "values": [ 0.1 ] },
+    { "name": "LiquidGlassSharpness", "type": "float",  "count": 1, "values": [ 0.1 ] },
+    { "name": "LiquidGlassBlur", "type": "float",  "count": 1, "values": [ 0.5 ] },
+    { "name": "Time", "type": "float",  "count": 1, "values": [ 0.0 ] }
+  ]
+}

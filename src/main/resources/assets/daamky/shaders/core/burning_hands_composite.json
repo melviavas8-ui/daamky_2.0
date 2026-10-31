@@ -1,0 +1,16 @@
+{
+  "vertex": "daamky:core/burning_hands",
+  "fragment": "daamky:core/burning_hands_composite",
+  "samplers": [
+    { "name": "SceneTexture" },
+    { "name": "HandTexture" },
+    { "name": "GlowTexture" },
+    { "name": "TrailTexture" }
+  ],
+  "uniforms": [
+    { "name": "TexelSize",     "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+    { "name": "GlowStrength",  "type": "float", "count": 1, "values": [ 1.18 ] },
+    { "name": "TrailStrength", "type": "float", "count": 1, "values": [ 1.16 ] },
+    { "name": "FillMode",      "type": "float", "count": 1, "values": [ 0.0 ] }
+  ]
+}

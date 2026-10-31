@@ -1,0 +1,17 @@
+{
+    "vertex": "daamky:core/sky_overlay",
+    "fragment": "daamky:core/sky_overlay",
+    "samplers": [],
+    "uniforms": [
+        { "name": "ModelViewMat",    "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+        { "name": "ProjMat",         "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+        { "name": "Time",            "type": "float", "count": 1, "values": [ 0.0 ] },
+        { "name": "CloudIntensity",  "type": "float", "count": 1, "values": [ 1.0 ] },
+        { "name": "SkyColor1",       "type": "float", "count": 3, "values": [ 0.20, 0.20, 0.30 ] },
+        { "name": "SkyColor2",       "type": "float", "count": 3, "values": [ 0.30, 0.00, 0.05 ] },
+        { "name": "NebulaColor1",    "type": "float", "count": 3, "values": [ 0.70, 0.28, 0.14 ] },
+        { "name": "NebulaColor2",    "type": "float", "count": 3, "values": [ 0.20, 0.00, 0.20 ] },
+        { "name": "SunColor",        "type": "float", "count": 3, "values": [ 0.40, 0.40, 0.20 ] },
+        { "name": "SunSize",         "type": "float", "count": 1, "values": [ 1.0 ] }
+    ]
+}
