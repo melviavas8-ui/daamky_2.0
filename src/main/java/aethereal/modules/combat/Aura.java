@@ -57,8 +57,8 @@ public class Aura extends Module {
          "aura.preDistance", 0.3F, 0.0F, 3.0F, 0.1F, () -> this.field0835.method0492() == Aura.AimMode.field1416
       )
       .method1007("Pre Distance")
-      .method0210("Extra distance used by Neuro mode for tracking before attack range")
-      .method2130("Дополнительная дистанция для ротации в режиме Neuro");
+      .method0210("Extra distance used by LinuxNeuro mode for tracking before attack range")
+      .method2130("Дополнительная дистанция для ротации в режиме Linux");
    private MultiSelectSetting field0435 = new MultiSelectSetting(
          "aura.attackSetting",
          Arrays.asList(
@@ -84,8 +84,8 @@ public class Aura extends Module {
       .method2130("Ударяет критами только с пробелом");
    private BooleanSetting field0229 = new BooleanSetting("aura.hitDelay", false, () -> this.field0835.method0492() == Aura.AimMode.field1416)
       .method1007("Hit Delay")
-      .method0210("Adds a random delay before each hit in Neuro mode")
-      .method2130("Случайная задержка перед ударом в режиме Neuro");
+      .method0210("Adds a random delay before each hit in Linux/Neuro mode")
+      .method2130("Случайная задержка перед ударом в режиме LinuxNeuro");
    private FloatSetting field0295 = new FloatSetting(
          "aura.hitDelayMin", 0.0F, 0.0F, 300.0F, 10.0F, () -> this.field0835.method0492() == Aura.AimMode.field1416 && this.field0229.method1938()
       )
@@ -543,7 +543,7 @@ public class Aura extends Module {
    public enum AimMode implements DisplayNamed {
       field0575("FunTime"),
       field0010("ReallyWorld"),
-      field1416("Neuro");
+      field1416("Linux");
 
       private final String field1030;
 
